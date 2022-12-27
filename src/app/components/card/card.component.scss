@@ -1,0 +1,47 @@
+$red:#6B0F1A;
+$blue:#1E3888;
+$yellow:#DDA448;
+$green:#4C6663;
+$orange:#F24C00;
+
+$gray:#E7E7E7;
+
+.card{
+  width: 95vw;
+  min-height: 500px;
+  background-color: transparent;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  .word-container{
+    width: 95%;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 5px 0;
+    .word{
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .person{
+    background-color: $blue;
+  }
+  .object{
+    background-color: $yellow;
+  }
+  .action{
+    background-color: $orange;
+  }
+  .hard{
+    background-color: $green;
+  }
+  .everyone{
+    background-color: $red;
+  }
+}
