@@ -14,7 +14,7 @@
       <p>{{currentTime !=0 ? currentTime:'Tiempo!'}}</p>
     </div>
   </ng-container>
-  <ng-container *ngIf="currentTime <= 0 || !countDownStarted">
+  <ng-container>
     <div class="closeButton" (click)="onCloseWindow()">
         <fa-icon [icon]="closeIcon"></fa-icon>
     </div>

@@ -6,7 +6,7 @@ import { interval } from 'rxjs';
 const FACES= [
   {name:'Lugar/Animal',color:'#1E3888',icon:faDog},
   {name:'Objeto',color:'#DDA448',icon:faBox},
-  {name:'Acción',color:'##F24C00',icon:faRunning},
+  {name:'Acción',color:'#F24C00',icon:faRunning},
   {name:'Dificil',color:'#4C6663',icon:faTriangleExclamation},
   {name:'Todos Juegan',color:'#6B0F1A',icon:faPeopleGroup},
 

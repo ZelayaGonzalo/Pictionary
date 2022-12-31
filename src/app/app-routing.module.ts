@@ -6,9 +6,10 @@ import { BoardComponent } from './components/board/board.component';
 import { FastComponent } from './components/fast/fast.component';
 
 const routes: Routes = [
-  {path:'cartas',component:MainComponent},
   {path:'tabla',component:BoardComponent},
-  {path:'fast',component:FastComponent}
+  {path:'fast',component:FastComponent},
+  {path:'', component:MainComponent}
+
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports

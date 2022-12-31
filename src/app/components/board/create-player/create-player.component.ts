@@ -11,7 +11,7 @@ export class CreatePlayerComponent {
   @Output() player:EventEmitter<Player> = new EventEmitter<Player>
   @Output() cancel:EventEmitter<boolean> = new EventEmitter<boolean>
 
-  icons = ['icon1.webp','icon1.jpg','icon2.jpg','icon3.jpg']
+  icons = ['icon1.jpg','icon2.jpg','icon3.jpg','icon_mario.webp','yoshi.webp','luigi.webp','wario.webp','waluigi.webp','bowser.webp','toad.webp','toadette.webp','toad_green.webp','toad_yellow.webp']
   iconSelected:String = 'icon1.jpg'
   name:String ='Gonzalo'
 

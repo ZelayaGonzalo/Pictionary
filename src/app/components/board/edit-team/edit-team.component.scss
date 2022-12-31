@@ -6,8 +6,10 @@ $orange:#F24C00;
 
 $gray:#E7E7E7;
 .form{
-  width: 500px;
-  height: 600px;
+  position: relative;
+  z-index: 10;
+  width: 80vw;
+  height: 80vh;
   background-color: white;
   border-radius: 20px;
   padding: 20px;

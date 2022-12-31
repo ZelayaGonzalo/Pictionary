@@ -6,8 +6,10 @@ $orange:#F24C00;
 
 $gray:#E7E7E7;
 .form{
-  width: 500px;
-  height: 600px;
+  position: relative;
+  z-index: 10;
+  width: 80vw;
+  height: 80vh;
   background-color: white;
   border-radius: 20px;
   padding: 20px;
@@ -16,6 +18,7 @@ $gray:#E7E7E7;
   align-items: center;
   font-weight: bold;
   label{
+    margin-top: 50px;
     input{
       border: none;
       font-weight: bold;
@@ -24,6 +27,7 @@ $gray:#E7E7E7;
     }
   }
   .icons{
+    margin-top: 50px;
     width: 100%;
     height: auto;
     max-height: 450px;
