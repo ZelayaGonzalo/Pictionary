@@ -1,0 +1,100 @@
+$red:#6B0F1A;
+$blue:#1E3888;
+$yellow:#DDA448;
+$green:#4C6663;
+$orange:#F24C00;
+
+$gray:#E7E7E7;
+.scores-container{
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .score-table{
+    position: relative;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid $green;
+    height: 300px;
+    border-bottom: 2px solid $green;
+    &:first-child{
+      border-left: 2px solid $green;
+    }
+    .top{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: $green;
+      color: white;
+      font-weight: bold;
+      padding: 5px 0;
+      p{
+        margin: 5px 0;
+      }
+      .members{
+        display: flex;
+        img{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .points{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 5px;
+      .check{
+        font-size: 30px;
+        color: #2B9720;
+        margin: 2px;
+      }
+    }
+    .options{
+      visibility: hidden;
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      bottom: 5px;
+      z-index: 2;
+      .minus{
+        background-color: $red;
+      }
+      .plus{
+        background-color: #2B9720;
+      }
+      button{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        font-size: 20px;
+        box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
+        -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
+      }
+    }
+    &:hover{
+      .options{
+        visibility: visible;
+      }
+    }
+    .total{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: $green;
+
+    }
+  }
+}

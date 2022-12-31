@@ -1,0 +1,81 @@
+$red:#6B0F1A;
+$blue:#1E3888;
+$yellow:#DDA448;
+$green:#4C6663;
+$orange:#F24C00;
+
+$gray:#E7E7E7;
+
+.card-container{
+  position: relative;
+  z-index: 10;
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  .center{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon{
+      font-size: 50px;
+    }
+    .text{
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
+  .corner{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  .hide{
+    visibility: hidden;
+  }
+  .play{
+    background-color: transparent;
+    border: 2px solid white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    &:hover{
+      background-color: white;
+      color: #2a2e32;
+    }
+    }
+  .countdown{
+    margin: 0;
+    font-size: 120px;
+    color: white;
+  }
+  .closeButton{
+    margin-top: 50px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}

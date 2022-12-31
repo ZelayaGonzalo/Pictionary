@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  faCircleQuestion, faPlay, faRotate } from '@fortawesome/free-solid-svg-icons';
 import { Card,data } from 'src/app/data/cards';
 
 
@@ -12,11 +13,27 @@ export class MainComponent implements OnInit {
   cards:Card[] = data
   currentCard:Card = <Card>{}
 
+  resetIcon = faRotate
+  playIcon = faPlay
+  question = faCircleQuestion
+
+  audio = new Audio()
+
   constructor() { }
 
   ngOnInit(): void {
     console.log(data)
-    this.currentCard = this.cards[0]
+    this.currentCard = get_random(this.cards)
+    console.log(this.currentCard)
   }
 
+  onChangeCard():void{
+    if(confirm('¿Cambiar carta?')===true)
+    this.currentCard = get_random(this.cards)
+  }
+
+}
+
+function get_random (list:Card[]) {
+  return list[Math.floor((Math.random()*list.length))];
 }

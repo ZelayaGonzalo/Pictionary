@@ -1,0 +1,22 @@
+<div class="card-container" [ngStyle]="{'background-color':currentFace.color}">
+  <div class="center" [ngClass]="countDownStarted ? 'corner':''">
+    <fa-icon [icon]="currentFace.icon" class="icon"></fa-icon>
+    <p class="text">{{currentFace.name}}</p>
+  </div>
+  <ng-container>
+    <div class="play" [ngClass]="countDownStarted ? 'hide':''" (click)="startCountdown()">
+      <fa-icon [icon]="playIcon"></fa-icon>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="countDownStarted">
+    <div class="countdown">
+      <p>{{currentTime !=0 ? currentTime:'Tiempo!'}}</p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentTime <= 0 || !countDownStarted">
+    <div class="closeButton" (click)="onCloseWindow()">
+        <fa-icon [icon]="closeIcon"></fa-icon>
+    </div>
+  </ng-container>
+</div>

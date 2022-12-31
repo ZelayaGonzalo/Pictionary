@@ -1,0 +1,20 @@
+<div class="form">
+  <label>Nombre:
+    <input type="text" [(ngModel)]="name">
+  </label>
+
+  <div class="colors">
+    <div *ngFor="let color of COLORS" >
+      <div class="img-container" class="color" (click)="selectColor(color)" [ngStyle]="{'background-color':color}" [ngClass]="color === editTeam.color ? 'selected':''">
+      </div>
+    </div>
+  </div>
+  <div class="options">
+    <button class="btn-option" (click)="onSave()">
+      Guardar
+    </button>
+    <button class="btn-option" (click)="onCancel()">
+      Cancelar
+    </button>
+  </div>
+</div>

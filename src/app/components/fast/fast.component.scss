@@ -1,0 +1,38 @@
+$red:#6B0F1A;
+$blue:#1E3888;
+$yellow:#DDA448;
+$green:#4C6663;
+$orange:#F24C00;
+
+$gray:#E7E7E7;
+.board-container{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $green;
+  .top{
+    height: 70px;
+    img{
+      height: 100%;
+    }
+  }
+
+}
+.form-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.dice-container{
+  font-size: 50px;
+  cursor: pointer;
+}

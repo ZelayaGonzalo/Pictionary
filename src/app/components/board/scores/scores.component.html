@@ -1,0 +1,22 @@
+<div class="scores-container">
+  <div class="score-table" *ngFor="let team of teams;let i=index" [ngStyle]="{'border-color':team.color}">
+    <div class="top" [ngStyle]="{'background-color':team.color}">
+      <p>{{team.name}}</p>
+      <div class="members">
+        <img [src]="'../../../../assets/Icons/'+player.icon" src="../../../../assets/Icons/icon1.jpg" class="member" *ngFor="let player of team.members">
+      </div>
+    </div>
+    <div class="points">
+      <div class="check" *ngFor="let item of convertToArray(team.score)">
+        <fa-icon [icon]="checkIcon"></fa-icon>
+      </div>
+    </div>
+    <div class="options">
+      <button class="minus" (click)="removePoint(i)"><fa-icon [icon]="minusIcon"></fa-icon></button>
+      <button class="plus" (click)="addPoint(i)"><fa-icon [icon]="plusIcon"></fa-icon></button>
+    </div>
+    <div class="total">
+      <h4>{{team.score}}</h4>
+    </div>
+  </div>
+</div>

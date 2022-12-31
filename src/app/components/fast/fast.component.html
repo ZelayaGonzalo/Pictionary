@@ -1,0 +1,13 @@
+<div class="board-container">
+  <div class="top">
+    <img src="../../../assets/Pictionary.webp">
+  </div>
+  <div class="dice-container" (click)="showRandomCardWindow()">
+    <fa-icon [icon]="diceIcon"></fa-icon>
+  </div>
+</div>
+<ng-container *ngIf="showRandomCard">
+  <div class="form-container">
+    <app-random-card (close)="hideRandomCard()"></app-random-card>
+  </div>
+</ng-container>

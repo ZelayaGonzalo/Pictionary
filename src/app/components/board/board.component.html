@@ -1,0 +1,95 @@
+<div class="board-container">
+  <div class="top">
+    <img src="../../../assets/Pictionary.webp">
+  </div>
+  <ng-container *ngIf="teams.length <= 0  && !showScores">
+    <div class="player-list">
+      <div class="player-button" *ngFor="let player of players">
+        <img [src]="'../../../assets/Icons/'+player.icon" >
+        <p>{{player.name}}</p>
+      </div>
+
+      <div class="player-button">
+        <div class="add" (click)="showAddWindow()">
+          <fa-icon [icon]="addIcon"></fa-icon>
+        </div>
+        <p>Agregar</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="teams.length > 1  && !showScores">
+    <div class="player-list">
+      <div *ngFor="let team of teams" class="team-container" (click)="editTeam(team)">
+        <div class="top-team" [ngStyle]="{'background-color':team.color}">
+          {{team.name}}
+        </div>
+        <div class="members">
+          <div class="player-button" *ngFor="let player of team.members">
+            <img [src]="'../../../assets/Icons/'+player.icon" >
+            <p>{{player.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="isAddingPlayer  && !showScores">
+    <div class="form-container">
+      <app-create-player (player)="addPlayer($event)" (cancel)="closeAddWindow()"></app-create-player>
+    </div>
+
+  </ng-container>
+  <ng-container *ngIf="showTeamEditWindow !showScores">
+    <div class="form-container">
+      <app-edit-team [editTeam]="selectedTeam" (teamOutput)="closeTeamEdit($event)" (cancel)="showTeamEditWindow = false"></app-edit-team>
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="players.length >= 4  && !showScores">
+    <div class="team-options">
+      <div>
+        Numero de integrantes por equipo:
+        <select [(ngModel)]="membersPerGroup">
+          <option [value]="2">2</option>
+          <option [value]="3">3</option>
+          <option [value]="4">4</option>
+        </select>
+      </div>
+      <button (click)="createTeams()"> {{teams.length > 0 ? 'Mezclar Equipos':'Crear Equipos'}}</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="teams.length >= 2 && !showScores">
+    <div>
+      <label>Objetivo:</label>
+      <select [(ngModel)]="targetGoal">
+        <option [value]="5">5</option>
+        <option [value]="7">7</option>
+        <option [value]="10">10</option>
+      </select>
+    </div>
+
+    <div class="reset" (click)="startPlaying()">
+      <fa-icon [icon]="playIcon"></fa-icon>
+    </div>
+  </ng-container>
+
+  <ng-container  *ngIf="showScores">
+    <div class="dice-container" (click)="showRandomCardWindow()">
+      <fa-icon [icon]="diceIcon"></fa-icon>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="showRandomCard">
+    <div class="form-container">
+      <app-random-card (close)="hideRandomCard()"></app-random-card>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="showScores">
+    <app-scores [teams]="teams"></app-scores>
+  </ng-container>
+</div>

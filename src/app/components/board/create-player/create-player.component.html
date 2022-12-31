@@ -1,0 +1,21 @@
+<div class="form">
+  <label>Nombre:
+    <input type="text" [(ngModel)]="name">
+  </label>
+
+  <div class="icons">
+    <div *ngFor="let icon of icons" >
+      <div class="img-container" class="icon" (click)="selectImage(icon)">
+        <img [src]="'../../../../assets/Icons/'+icon" [ngClass]="icon === iconSelected ? 'selected':''" >
+      </div>
+    </div>
+  </div>
+  <div class="options">
+    <button class="btn-option" (click)="onSave()">
+      Guardar
+    </button>
+    <button class="btn-option" (click)="onCancel()">
+      Cancelar
+    </button>
+  </div>
+</div>

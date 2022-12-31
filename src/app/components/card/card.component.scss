@@ -8,7 +8,8 @@ $gray:#E7E7E7;
 
 .card{
   width: 95vw;
-  min-height: 500px;
+  min-height: 300px;
+  height: auto;
   background-color: transparent;
   border-radius: 20px;
   display: flex;
@@ -16,6 +17,7 @@ $gray:#E7E7E7;
   align-items: center;
   margin: auto;
   .word-container{
+    position: relative;
     width: 95%;
     min-height: 80px;
     display: flex;
@@ -27,6 +29,17 @@ $gray:#E7E7E7;
       color: white;
       font-size: 16px;
       font-weight: bold;
+    }
+    .icon{
+      position: absolute;
+      color: white;
+      left: 15px;
+      top: 0;
+      height: 100%;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .person{
