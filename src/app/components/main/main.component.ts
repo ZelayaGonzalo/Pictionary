@@ -22,9 +22,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(data)
     this.currentCard = get_random(this.cards)
-    console.log(this.currentCard)
   }
 
   onChangeCard():void{
